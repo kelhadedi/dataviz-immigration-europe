@@ -1,0 +1,314 @@
+{
+  "BEL": {
+    "label": "Belgique",
+    "immigrationRange": "30000 - 1500000",
+    "migrantCount": 2000000,
+    "employmentRate": 65.2,
+    "comparisonData": [75.0, 65.2],
+    "migrationTrend": [30000, 35000, 40000, 45000, 50000, 55000, 60000, 65000, 70000, 75000, 80000],
+    "previewData": {
+      "PIB": 60,
+      "Popularité": 80,
+      "Politique": 40,
+      "Marché du travail": 75
+    }
+  },
+  "FRA": {
+    "label": "France",
+    "immigrationRange": "50000 - 2500000",
+    "migrantCount": 8500000,
+    "employmentRate": 70.5,
+    "comparisonData": [78.0, 70.5],
+    "migrationTrend": [50000, 60000, 70000, 80000, 90000, 100000, 110000, 120000, 130000, 140000, 150000],
+    "previewData": {
+      "PIB": 65,
+      "Popularité": 85,
+      "Politique": 50,
+      "Marché du travail": 80
+    }
+  },
+  "GBR": {
+    "label": "Royaume-Uni",
+    "immigrationRange": "60000 - 3000000",
+    "migrantCount": 9000000,
+    "employmentRate": 73.8,
+    "comparisonData": [80.0, 73.8],
+    "migrationTrend": [60000, 70000, 80000, 90000, 100000, 110000, 120000, 130000, 140000, 150000, 160000],
+    "previewData": {
+      "PIB": 70,
+      "Popularité": 75,
+      "Politique": 45,
+      "Marché du travail": 70
+    }
+  },
+  "IRL": {
+    "label": "Irlande",
+    "immigrationRange": "20000 - 500000",
+    "migrantCount": 800000,
+    "employmentRate": 68.4,
+    "comparisonData": [77.5, 68.4],
+    "migrationTrend": [20000, 25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000, 65000, 70000],
+    "previewData": {
+      "PIB": 55,
+      "Popularité": 70,
+      "Politique": 35,
+      "Marché du travail": 65
+    }
+  },
+  "CZE": {
+    "label": "République tchèque",
+    "immigrationRange": "10000 - 400000",
+    "migrantCount": 500000,
+    "employmentRate": 66.7,
+    "comparisonData": [79.0, 66.7],
+    "migrationTrend": [10000, 12000, 14000, 16000, 18000, 20000, 22000, 24000, 26000, 28000, 30000],
+    "previewData": {
+      "PIB": 50,
+      "Popularité": 65,
+      "Politique": 30,
+      "Marché du travail": 60
+    }
+  },
+  "AUT": {
+    "label": "Autriche",
+    "immigrationRange": "25000 - 1000000",
+    "migrantCount": 1700000,
+    "employmentRate": 71.2,
+    "comparisonData": [80.5, 71.2],
+    "migrationTrend": [25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000, 65000, 70000, 75000],
+    "previewData": {
+      "PIB": 65,
+      "Popularité": 75,
+      "Politique": 40,
+      "Marché du travail": 70
+    }
+  },
+  "CHE": {
+    "label": "Suisse",
+    "immigrationRange": "40000 - 1200000",
+    "migrantCount": 2500000,
+    "employmentRate": 79.1,
+    "comparisonData": [85.0, 79.1],
+    "migrationTrend": [40000, 45000, 50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000],
+    "previewData": {
+      "PIB": 75,
+      "Popularité": 85,
+      "Politique": 50,
+      "Marché du travail": 80
+    }
+  },
+  "DEU": {
+    "label": "Allemagne",
+    "immigrationRange": "80000 - 3500000",
+    "migrantCount": 12000000,
+    "employmentRate": 74.6,
+    "comparisonData": [81.0, 74.6],
+    "migrationTrend": [80000, 90000, 100000, 110000, 120000, 130000, 140000, 150000, 160000, 170000, 180000],
+    "previewData": {
+      "PIB": 70,
+      "Popularité": 80,
+      "Politique": 45,
+      "Marché du travail": 75
+    }
+  },
+  "DNK": {
+    "label": "Danemark",
+    "immigrationRange": "15000 - 600000",
+    "migrantCount": 600000,
+    "employmentRate": 72.3,
+    "comparisonData": [80.0, 72.3],
+    "migrationTrend": [15000, 17000, 19000, 21000, 23000, 25000, 27000, 29000, 31000, 33000, 35000],
+    "previewData": {
+      "PIB": 60,
+      "Popularité": 70,
+      "Politique": 35,
+      "Marché du travail": 65
+    }
+  },
+  "ESP": {
+    "label": "Espagne",
+    "immigrationRange": "40000 - 2000000",
+    "migrantCount": 6500000,
+    "employmentRate": 65.8,
+    "comparisonData": [75.5, 65.8],
+    "migrationTrend": [40000, 50000, 60000, 70000, 80000, 90000, 100000, 110000, 120000, 130000, 140000],
+    "previewData": {
+      "PIB": 55,
+      "Popularité": 65,
+      "Politique": 30,
+      "Marché du travail": 60
+    }
+  },
+  "EST": {
+    "label": "Estonie",
+    "immigrationRange": "5000 - 200000",
+    "migrantCount": 200000,
+    "employmentRate": 68.9,
+    "comparisonData": [78.0, 68.9],
+    "migrationTrend": [5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000],
+    "previewData": {
+      "PIB": 50,
+      "Popularité": 60,
+      "Politique": 25,
+      "Marché du travail": 55
+    },
+    "employmentRateByYear": {
+      "2016": 76.73,
+      "2017": 77.53,
+      "2018": 74.11,
+      "2019": 78.87,
+      "2020": 77.10,
+      "2021": 77.57,
+      "2022": 81.86,
+      "2023": 83.25
+    }
+  },
+  "FIN": {
+    "label": "Finlande",
+    "immigrationRange": "10000 - 400000",
+    "migrantCount": 400000,
+    "employmentRate": 70.1,
+    "comparisonData": [79.5, 70.1],
+    "migrationTrend": [10000, 12000, 14000, 16000, 18000, 20000, 22000, 24000, 26000, 28000, 30000],
+    "previewData": {
+      "PIB": 60,
+      "Popularité": 70,
+      "Politique": 35,
+      "Marché du travail": 65
+    }
+  },
+  "HUN": {
+    "label": "Hongrie",
+    "immigrationRange": "8000 - 300000",
+    "migrantCount": 600000,
+    "employmentRate": 64.5,
+    "comparisonData": [76.0, 64.5],
+    "migrationTrend": [8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000],
+    "previewData": {
+      "PIB": 55,
+      "Popularité": 65,
+      "Politique": 30,
+      "Marché du travail": 60
+    }
+  },
+  "LTU": {
+    "label": "Lituanie",
+    "immigrationRange": "5000 - 200000",
+    "migrantCount": 200000,
+    "employmentRate": 67.9,
+    "comparisonData": [91.1, 67.9],
+    "migrationTrend": [5000, 6000, 3200, 8000, 6000, 10000, 11000, 12000, 16000, 14000, 15000],
+    "previewData": {
+      "PIB": 50,
+      "Popularité": 60,
+      "Politique": 25,
+      "Marché du travail": 55
+    }
+  },
+  "NLD": {
+    "label": "Pays-Bas",
+    "immigrationRange": "30000 - 1000000",
+    "migrantCount": 2000000,
+    "employmentRate": 73.2,
+    "comparisonData": [80.5, 73.2],
+    "migrationTrend": [30000, 35000, 40000, 45000, 30000, 55000, 40000, 65000, 70000, 65000, 80000],
+    "previewData": {
+      "PIB": 65,
+      "Popularité": 75,
+      "Politique": 40,
+      "Marché du travail": 70
+    }
+  },
+  "POL": {
+    "label": "Pologne",
+    "immigrationRange": "10000 - 500000",
+    "migrantCount": 800000,
+    "employmentRate": 66.3,
+    "comparisonData": [77.0, 66.3],
+    "migrationTrend": [10000, 12000, 14000, 16000, 12000, 20000, 22000, 29000, 26000, 28000, 30000],
+    "previewData": {
+      "PIB": 55,
+      "Popularité": 65,
+      "Politique": 30,
+      "Marché du travail": 60
+    }
+  },
+  "PRT": {
+    "label": "Portugal",
+    "immigrationRange": "15000 - 600000",
+    "migrantCount": 900000,
+    "employmentRate": 67.4,
+    "comparisonData": [76.5, 67.4],
+    "migrationTrend": [15000, 17000, 19000, 21000, 23000, 25000, 22000, 30000, 31000, 33000, 35000],
+    "previewData": {
+      "PIB": 55,
+      "Popularité": 65,
+      "Politique": 30,
+      "Marché du travail": 60
+    }
+  },
+  "SVN": {
+    "label": "Slovénie",
+    "immigrationRange": "5000 - 200000",
+    "migrantCount": 300000,
+    "employmentRate": 68.0,
+    "comparisonData": [78.5, 68.0],
+    "migrationTrend": [5000, 6000, 10000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000],
+    "previewData": {
+      "PIB": 50,
+      "Popularité": 60,
+      "Politique": 25,
+      "Marché du travail": 55
+    }
+  },
+  "SWE": {
+    "label": "Suède",
+    "immigrationRange": "40000 - 1200000",
+    "migrantCount": 2000000,
+    "employmentRate": 74.9,
+    "comparisonData": [82.0, 74.9],
+    "migrationTrend": [40000, 45000, 60000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000],
+    "previewData": {
+      "PIB": 70,
+      "Popularité": 80,
+      "Politique": 45,
+      "Marché du travail": 75
+    },
+    "employmentRateByYear": {
+      "2016": 68.73,
+      "2017": 70.48,
+      "2018": 71.19,
+      "2019": 68.45,
+      "2020": 70.01,
+      "2021": 74.69,
+      "2022": 76.20,
+      "2023": 76.20
+    }
+  },
+  "NOR": {
+    "label": "Norvège",
+    "immigrationRange": "20000 - 800000",
+    "migrantCount": 800000,
+    "employmentRate": 75.3,
+    "comparisonData": [83.0, 75.3],
+    "migrationTrend": [20000, 25000, 30000, 35000, 40000, 65000, 50000, 55000, 60000, 65000, 70000],
+    "previewData": {
+      "PIB": 70,
+      "Popularité": 80,
+      "Politique": 45,
+      "Marché du travail": 75
+    }
+  },
+  "ITA": {
+    "label": "Italie",
+    "employmentRateByYear": {
+      "2017": 57.63,
+      "2018": 58.15,
+      "2019": 58.65,
+      "2020": 57.40,
+      "2021": 58.10,
+      "2022": 59.79,
+      "2023": 61.11
+    }
+  }
+}

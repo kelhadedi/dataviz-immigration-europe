@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Carte interactive de l'immigration en Europe</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/main.js" defer></script>
+  <link rel="stylesheet" href="./style/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <img src="/style/img/logos/header.svg" alt="Logo du site" class="header-logo">
+      <h1 class="site-title">Dataviz sur l'immigration en Europe</h1>
+      <button class="info-button" onclick="showPopup('about-data')">À propos des données</button>
+    </div>
+  </header>
+
+  <!-- Aide -->
+  <div id="about-data" class="about-data">
+    <div class="about-data-content">
+      <span class="close">&times;</span>
+      <h2>À propos des données</h2>
+      <p><strong>Contexte</strong><br>
+        En France, l’immigration occupe depuis plusieurs années le devant de la scène politique et médiatique : près de
+        43 % des électeurs citaient la question migratoire comme déterminante lors du scrutin européen du 9 juin 2024 <a
+          href="https://www.lemonde.fr/en/france/article/2024/06/13/european-elections-how-the-migration-issue-influenced-the-french-vote_6674612_7.html"
+          target="_blank">(lemonde.fr)</a>. Pourtant, les sondages d’opinion montrent aussi qu’une majorité de Français
+        considèrent désormais les immigrés comme une force plutôt qu’un fardeau <a
+          href="https://www.pewresearch.org/global-migration-and-demography/2019/03/14/around-the-world-more-say-immigrants-are-a-strength-than-a-burden/"
+          target="_blank">(pewresearch.org)</a>, et que le public surestime massivement le nombre réel d’immigrés (28 %
+        perçus contre 12 % réels en moyenne dans 37 pays, France comprise) <a
+          href="https://www.ipsos.com/en-uk/perils-perception-2018" target="_blank">(ipsos.com)</a>.</p>
+      <p>Cette divergence entre perception et réalité nourrit les stéréotypes et rend d’autant plus nécessaire une
+        approche visuelle, impartiale et documentée.</p>
+      <p><strong>Message clé</strong><br>
+        L’immigration est un phénomène qui est souvent mal perçu. Grâce à ce projet de datavisualisation, notre objectif
+        est de rétablir les faits, d’illustrer les dynamiques migratoires réelles en Europe et de montrer que derrière
+        les chiffres se trouvent des réalités humaines et économiques.</p>
+      <p><strong>Concept de visualisation</strong><br>
+        Notre carte interactive vise à représenter fidèlement les données sur l’immigration en Europe, nous souhaitons :
+      </p>
+      <ul>
+        <li>Montrer les flux migratoires internes et externes à l’Europe à partir des données « Immigration and
+          Emigration » d’Our World in Data.</li>
+        <li>Montrer la réalité de l’immigration en Europe et son évolution au cours des années grâce aux indicateurs
+          OCDE. Par exemple, 39 % des immigrés arrivés dans l’UE depuis moins de cinq ans en 2020 étaient titulaires
+          d’un diplôme tertiaire, contre 25 % dix ans plus tôt <a
+            href="https://www.oecd.org/en/publications/indicators-of-immigrant-integration-2023_1d5020a6-en.html"
+            target="_blank">(oecd.org)</a>.</li>
+        <li>Mettre en lumière le décalage perception/réalité.</li>
+      </ul>
+    </div>
+  </div>
+  <div id="slider-container">
+    <input type="range" min="2012" max="2022" value="2020" id="yearSlider">
+    <span id="yearDisplay">2020</span>
+  </div>
+  <div id="map-container">
+    <div id="map"></div>
+    <div id="map-legend">
+      <p class="legend-title">Flux migratoire</h3>
+      <div class="legend-item"><span class="legend-color" style="background-color: #f7fbff;"></span><span
+          class="legend-text">
+          < 25 000</span>
+      </div>
+      <div class="legend-item"><span class="legend-color" style="background-color: #d0e2f0;"></span><span
+          class="legend-text">25 000 - 50 000</span></div>
+      <div class="legend-item"><span class="legend-color" style="background-color: #7fbfff;"></span><span
+          class="legend-text">50 000 - 75 000</span></div>
+      <div class="legend-item"><span class="legend-color" style="background-color: #2c7bbf;"></span><span
+          class="legend-text">75 000 - 100 000</span></div>
+      <div class="legend-item"><span class="legend-color" style="background-color: #08306b;"></span><span
+          class="legend-text">> 100 000</span></div>
+    </div>
+
+    <!-- Prévisualisation -->
+    <div class="preview-box">
+      <h3>Prévisualisation</h3>
+      <div class="slider-group">
+        <label><i class="icon">💰</i> PIB</label>
+        <input type="range" min="0" max="100" value="60">
+      </div>
+      <div class="slider-group">
+        <label><i class="icon">⭐</i> Popularité</label>
+        <input type="range" min="0" max="100" value="80">
+      </div>
+      <div class="slider-group">
+        <label><i class="icon">🗳️</i> Politique</label>
+        <input type="range" min="0" max="100" value="40">
+      </div>
+      <div class="slider-group">
+        <label><i class="icon">💼</i> Marché du travail</label>
+        <input type="range" min="0" max="100" value="75">
+      </div>
+      <p>Source : <a style="color: #007BFF;"
+          href="https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CSociety%23SOC%23%7CMigration%23SOC_MIG%23&pg=0&bp=true&snb=6&isAvailabilityDisabled=false&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_MIG%40DF_MIG&df[ag]=OECD.ELS.IMD&df[vs]=1.0&dq=.W.A.B11._T...&pd=2012%2C&to[TIME_PERIOD]=false">OECD
+          Data Explorer (2012-2022) - Résultats obtenus par les immigrants sur le marché du travail - Taux d'emploi, de
+          chômage et de participation par sexe</a></p>
+    </div>
+    <div class="info-box">
+      <h3>Pays</h3>
+      <p><strong>Fluctuations de l'immigration :</strong></p>
+      <canvas id="infoChart" width="400" height="200"></canvas>
+      <p><strong>Nombre de migrants :</strong> ...</p>
+      <p><strong>Emplois dus à l'immigration :</strong> ...%</p>
+      <p><strong>Comparaison avec les natifs :</strong> ...%</p>
+      <p>Source : <a style="color: #007BFF;"
+          href="https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CSociety%23SOC%23%7CMigration%23SOC_MIG%23&pg=0&bp=true&snb=6&isAvailabilityDisabled=false&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_MIG%40DF_MIG&df[ag]=OECD.ELS.IMD&df[vs]=1.0&dq=.W.A.B11._T...&pd=2012%2C&to[TIME_PERIOD]=false">OECD
+          Data Explorer (2012-2022) - Évolution du nombre d’immigrés par pays (2012-2022) </a></p>
+    </div>
+  </div>
+  <section class="flags-section">
+    <img class="flag" src="/style/img/flag/BELGIQUE.svg" alt="Belgium">
+    <img class="flag" src="/style/img/flag/FRA.svg" alt="France">
+    <img class="flag" src="/style/img/flag/AUTRICHE.svg" alt="Austria">
+    <img class="flag" src="/style/img/flag/SUISSE.svg" alt="Switzerland">
+    <img class="flag" src="/style/img/flag/UNITED-KINGDOM.svg" alt="United Kingdom">
+    <img class="flag" src="/style/img/flag/IRLANDE.svg" alt="Ireland">
+    <img class="flag" src="/style/img/flag/ALLEMAGNE.svg" alt="Germany">
+    <img class="flag" src="/style/img/flag/DANEMARK.svg" alt="Denmark">
+    <img class="flag" src="/style/img/flag/ESPAGNE.svg" alt="Spain">
+    <img class="flag" src="/style/img/flag/ESTONIE.svg" alt="Estonia">
+    <img class="flag" src="/style/img/flag/FINLAND.svg" alt="Finland">
+    <img class="flag" src="/style/img/flag/HONGRIE.svg" alt="Hungary">
+    <img class="flag" src="/style/img/flag/LITUANIE.svg" alt="Lithuania">
+    <img class="flag" src="/style/img/flag/PAYS-BAS.svg" alt="Netherlands">
+    <img class="flag" src="/style/img/flag/POLOGNE.svg" alt="Poland">
+    <img class="flag" src="/style/img/flag/PORTUGAL.svg" alt="Portugal">
+    <img class="flag" src="/style/img/flag/REPUBLIQUE-TCHEQUE.svg" alt="Czech Republic">
+    <img class="flag" src="/style/img/flag/SLOVENIE.svg" alt="Slovenia">
+    <img class="flag" src="/style/img/flag/SUEDE.svg" alt="Sweden">
+  </section>
+
+  <!-- Explication graphique -->
+  <section class="chart-explanation">
+    <h2>Une surestimation généralisée de la population immigrée</h2>
+    <p>Ce graphique compare la proportion réelle de personnes nées à l’étranger (données Eurostat 2019) à l’estimation
+      moyenne donnée par les répondants de l’Enquête sociale européenne (ESS) 2014 dans 20 pays européens. Résultat :
+      dans tous les pays, la part des immigrés est surestimée. Par exemple, en France, les données officielles indiquent
+      12 % de personnes nées à l’étranger, contre 27 % selon les enquêtés. En Pologne, l’écart est encore plus marqué,
+      avec une perception cinq fois supérieure à la réalité. Cette exagération, influencée par la proximité avec les
+      immigrés, la vulnérabilité économique ou les opinions anti-immigrés (Sides & Citrin, 2007), souligne l’importance
+      d’une pédagogie des migrations basée sur des données fiables.</p>
+    <p><strong>Source :</strong> Eurostat 2019, ESS 2014. <a
+        href="https://www.icmigrations.cnrs.fr/2019/05/14/defacto-7-004/" target="_blank">Institut Convergences
+        Migrations</a></p>
+  </section>
+
+  <h3 id="chartTitle">Pourcentage de personnes nées à l'étranger (2014)</h2>
+    <div id="bar-legend">
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: #FF6384;"></span>
+        <span class="legend-text">Données réelles (ex. < 10%)</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: #36A2EB;"></span>
+        <span class="legend-text">Estimations des enquêtés (ESS)</span>
+      </div>
+    </div>
+    <canvas id="myChart"></canvas>
+    <footer class="footer">
+      <div class="footer-logos">
+        <img class="footer-logo" src="./style/img/logos/iut.svg" alt="IUT Lannion">
+        <img class="footer-logo" src="./style/img/logos/univ_rennes.svg" alt="Université de Rennes">
+        <img class="footer-logo" src="./style/img/logos/mmi.svg" alt="MMI">
+      </div>
+      <div class="footer-text">
+        <p>Réalisé par EL HADEDI Karim</p>
+        <p>Étudiant en 2ème année de BUT MMI à l'IUT de Lannion, Université de Rennes</p>
+        <p>Source données : <a style="color: white;" href="https://www.healthdata.org/research-analysis/gbd">IHME,
+            Global
+            Burden of Disease (2024)</a> - avec un léger traitement par <a style="color: white;"
+            href="https://ourworldindata.org/migration">Our World in Data</a></p>
+        <a style="color: white;"
+          href="https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CSociety%23SOC%23%7CMigration%23SOC_MIG%23&pg=0&bp=true&snb=6&isAvailabilityDisabled=false&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_MIG%40DF_MIG&df[ag]=OECD.ELS.IMD&df[vs]=1.0&dq=.W.A.B11._T...&pd=2012%2C&to[TIME_PERIOD]=false">OECD
+          Data Explorer</a>,
+        <a style="color: white;" href="https://www.icmigrations.cnrs.fr/2019/05/14/defacto-7-004/">Institut Convergences
+          Migrations</a>
+      </div>
+    </footer>
+</body>
+
+</html>

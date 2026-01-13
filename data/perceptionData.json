@@ -1,0 +1,102 @@
+{
+  "Switzerland": {
+    "label": "Suisse",
+    "data": [27, 32],
+    "backgroundColor": "#FF6384"
+  },
+  "Austria": {
+    "label": "Autriche",
+    "data": [17, 26],
+    "backgroundColor": "#FFCE56"
+  },
+  "Belgium": {
+    "label": "Belgique",
+    "data": [16, 30],
+    "backgroundColor": "#FF9F40"
+  },
+  "Ireland": {
+    "label": "Irlande",
+    "data": [16, 21],
+    "backgroundColor": "#FF6347"
+  },
+  "Sweden": {
+    "label": "Suède",
+    "data": [16, 21],
+    "backgroundColor": "#FFD700"
+  },
+  "Estonia": {
+    "label": "Estonie",
+    "data": [15, 21],
+    "backgroundColor": "#ADFF2F"
+  },
+  "Norway": {
+    "label": "Norvège",
+    "data": [14, 17],
+    "backgroundColor": "#00FF7F"
+  },
+  "Spain": {
+    "label": "Espagne",
+    "data": [13, 22],
+    "backgroundColor": "#FFA07A"
+  },
+  "Germany": {
+    "label": "Allemagne",
+    "data": [12, 24],
+    "backgroundColor": "#98FB98"
+  },
+  "France": {
+    "label": "France",
+    "data": [12, 27],
+    "backgroundColor": "#87CEFA"
+  },
+  "UnitedKingdom": {
+    "label": "Grande-Bretagne",
+    "data": [12, 28],
+    "backgroundColor": "#7B68EE"
+  },
+  "Netherlands": {
+    "label": "Pays-Bas",
+    "data": [12, 23],
+    "backgroundColor": "#00CED1"
+  },
+  "Slovenia": {
+    "label": "Slovénie",
+    "data": [11, 23],
+    "backgroundColor": "#32CD32"
+  },
+  "Denmark": {
+    "label": "Danemark",
+    "data": [10, 14],
+    "backgroundColor": "#F0E68C"
+  },
+  "Portugal": {
+    "label": "Portugal",
+    "data": [8, 25],
+    "backgroundColor": "#66CDAA"
+  },
+  "Finland": {
+    "label": "Finlande",
+    "data": [5, 10],
+    "backgroundColor": "#F4A460"
+  },
+  "Hungary": {
+    "label": "Hongrie",
+    "data": [5, 11],
+    "backgroundColor": "#20B2AA"
+  },
+  "Lithuania": {
+    "label": "Lituanie",
+    "data": [5, 11],
+    "backgroundColor": "#DAA520"
+  },
+  "CzechRepublic": {
+    "label": "Tchéquie",
+    "data": [4, 9],
+    "backgroundColor": "#7FFF00"
+  },
+  "Poland": {
+    "label": "Pologne",
+    "data": [2, 9],
+    "backgroundColor": "#00FA9A"
+  }
+}
